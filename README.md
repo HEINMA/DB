@@ -1,4 +1,27 @@
-# DB
+
+# Maria DB
+
+https://mariadb.org/start-mariadb-in-k8s/
+
+Create the container
+
+```console
+$ kubectl apply -f mariadb-deployment.yaml 
+deployment.apps/mariadb-deployment created
+```
+
+
+
+
+```console
+
+kubectl exec -it mariadb-deployment-76f576bb87-b862p -- mariadb -uroot -psecret -e "select current_user()"
+```
+
+
+
+
+# REFFERENCES
 
 Maria DB Run from docker.
 https://mariadb.com/kb/en/installing-and-using-mariadb-via-docker/
@@ -37,6 +60,7 @@ sudo usermod -aG docker $USER
 
 https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management
 
+
 Above way follow to install kubernetes.
 
 Then install the minikube.
@@ -44,3 +68,8 @@ Then install the minikube.
 sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+
+
+
+
